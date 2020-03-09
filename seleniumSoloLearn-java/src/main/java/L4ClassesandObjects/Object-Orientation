@@ -1,0 +1,618 @@
+1. Java uses Object-Oriented Programming (OOP), a programming style that is intended to make thinking
+about programming closer to thinking about the real world.
+In OOP, each object is an independent unit with a unique identity, just as objects in the real world are.
+
+2.An apple is an object; so is a mug. Each has its unique identity. 
+It's possible to have two mugs that look identical, but they are still separate, unique objects.
+
+3.Objects also have characteristics, which are used to describe them.
+For example, a car can be red or blue, a mug can be full or empty, and so on. 
+These characteristics are also called attributes. An attribute describes the current state of an object.
+In the real world, each object behaves in its own way. The car moves, the phone rings, and so on.
+The same applies to objects: behavior is specific to the object's type.
+
+4.In summary, in object oriented programming, each object has three dimensions: 
+-identity, attributes, and behavior.
+Attributes describe the object's current state, and what the object 
+is capable of doing is demonstrated through the object's behavior.
+
+5.Classes:
+A class describes what the object will be, but is separate from the object itself.
+In other words, classes can be described as blueprints, descriptions, or definitions for an object. 
+You can use the same class as a blueprint for creating multiple objects. 
+The first step is to define the class, which then becomes a blueprint for object creation.
+
+Each class has a name, and each is used to define attributes and behavior.
+Some examples of attributes and behavior:
+
+Attibutes:        Behavior
+name               walk
+height             run
+weight             jump
+gender             speak
+age                sleep
+
+In other words, an object is an instance of a class/Each object is called instance of a class.
+A class defines attributes and behavior.
+*************************************************************************************************
+
+METHODS:
+
+Methods define behavior. A method is a collection of statements that are grouped together
+ to perform an operation. 
+System.out.println() is an example of a method.
+You can define your own methods to perform your desired tasks.
+Let's consider the following code:
+class MyClass {
+
+  static void sayHello() {
+    System.out.println("Hello World!");
+  }
+
+  public static void main(String[ ] args) {
+    sayHello();
+  }
+}
+// Outputs "Hello World!"
+
+The code above declares a method called "sayHello", which prints a text, and then gets called in main.
+To call a method, type its name and then follow the name with a set of parentheses.
+
+public static void main(String[ ] args) {
+  hello();
+}
+static void hello() {
+   System.out.println("hi");
+}
+
+Calling Methods:
+
+You can call a method as many times as necessary.
+When a method runs, the code jumps down to where the method is defined, executes the code inside of it, 
+then goes back and proceeds to the next line.
+Example:
+class MyClass {
+  
+  static void sayHello() {
+    System.out.println("Hello World!");
+  }
+
+  public static void main(String[ ] args) {
+    sayHello();
+    sayHello();
+    sayHello();
+  }
+}
+
+// Hello World!
+// Hello World!
+// Hello World!
+Try It Yourself
+
+In cases like the one above, where the same thing is repeated over and over, 
+you can achieve the same result using loops (while or for).
+
+***********************************************************************************
+Access Modifiers
+
+Now let's discuss the public keyword in front of the main method.
+public static void main(String[ ] args)
+
+public is an access modifier, meaning that it is used to set the level of access. 
+You can use access modifiers for classes, attributes, and methods.
+
+For classes, the available modifiers are public or default (left blank), as described below:
+public: The class is accessible by any other class.
+default: The class is accessible only by classes in the same package.
+
+The following choices are available for attributes and methods:
+default: A variable or method declared with no access control modifier is available 
+to any other class in the same package.
+public: Accessible from any other class.
+protected: Provides the same access as the default access modifier, 
+with the addition that subclasses can access protected methods and variables of the superclass 
+(Subclasses and superclasses are covered in upcoming lessons).
+private: Accessible only within the declared class itself.
+
+Example:
+public class Vehicle {
+  private int maxSpeed;
+  private int wheels;
+  private String color;
+  private double fuelCapacity;
+
+  public void horn() {
+    System.out.println("Beep!");
+  }
+}
+
+It's a best practice to keep the variables within a class private. The variables are accessible and modified using Getters and Setters.
+Tap Continue to learn about Getters and Setters.
+
+*******************************************************************************************************
+
+Getters & Setters
+
+Getters and Setters are used to effectively protect your data, particularly when creating classes. For each variable, the get method returns its value, while the set method sets the value.
+
+Getters start with get, followed by the variable name, with the first letter of the variable name capitalized.
+Setters start with set, followed by the variable name, with the first letter of the variable name capitalized.
+
+Example:
+public class Vehicle {
+  private String color;
+
+  // Getter
+  public String getColor() {
+    return color;
+  }
+
+ // Setter
+  public void setColor(String c) {
+    this.color = c;
+  }
+}
+
+The getter method returns the value of the attribute.
+The setter method takes a parameter and assigns it to the attribute.
+The keyword this is used to refer to the current object. 
+Basically, this.color is the color attribute of the current object.
+
+*******************************************************************************************************
+
+Constructors
+
+Constructors are special methods invoked when an object is created and are used to initialize them.
+A constructor can be used to provide initial values for object attributes.
+
+- A constructor name must be same as its class name.
+- A constructor must have no explicit return type.
+
+Example of a constructor:
+public class Vehicle {
+  private String color;
+  Vehicle() {
+     color = "Red";
+  }
+}
+
+The Vehicle() method is the constructor of our class, so whenever an object of that class is created, 
+the color attribute will be set to "Red".
+A constructor can also take parameters to initialize attributes.
+public class Vehicle {
+  private String color;
+  Vehicle(String c) {
+    color = c;
+  }
+}
+
+You can think of constructors as methods that will set up your class by default,
+ so you don’t need to repeat the same code every time.
+
+ Note:
+ A single class can have multiple constructors with different numbers of parameters.
+The setter methods inside the constructors can be used to set the attribute values.
+
+Example:
+public class Vehicle {
+  private String color;
+
+  Vehicle() {
+    this.setColor("Red");
+  }
+  Vehicle(String c) {
+    this.setColor(c);
+  }
+
+  // Setter
+  public void setColor(String c) {
+    this.color = c;
+  }
+}
+=============================================================================================================
+
+Value types are the basic types, and include byte, short, int, long, float, double, boolean, and char.
+These data types store the values assigned to them in the corresponding memory locations.
+So, when you pass them to a method, you basically operate on the variable's value, 
+rather than on the variable itself.
+Example:
+public class MyClass {
+  public static void main(String[ ] args) {
+    int x = 5;
+    addOneTo(x);
+    System.out.println(x);       
+  }
+  static void addOneTo(int num) {
+    num = num + 1;
+  }
+}
+// Outputs "5"
+Try It Yourself
+
+The method from the example above takes the value of its parameter, which is why the original
+ variable is not affected and 5 remains as its value.
+ 
+ ******************************************************************************************************
+ 
+ Reference Types
+
+A reference type stores a reference (or address) to the memory location
+where the corresponding data is stored.
+When you create an object using the constructor, 
+you create a reference variable.
+For example, consider having a Person class defined:
+public class MyClass {
+  public static void main(String[ ] args) {
+    Person j;
+    j = new Person("John");
+    j.setAge(20);
+    celebrateBirthday(j);
+    System.out.println(j.getAge());
+  }
+  static void celebrateBirthday(Person p) {
+    p.setAge(p.getAge() + 1);
+  }
+}
+//Outputs "21"
+Try It Yourself
+
+The method celebrateBirthday takes a Person object as its parameter, and increments its attribute.
+Because j is a reference type, the method affects the object itself, and is able to change the actual value of its attribute.
+Arrays and Strings are also reference data types.
+
+******************************************************************************************************
+
+Static
+
+When you declare a variable or a method as static, it belongs to the class, 
+rather than to a specific instance. This means that only one instance of a static member exists, 
+even if you create multiple objects of the class, or if you don't create any. 
+It will be shared by all objects.
+Example:
+public class Counter {
+  public static int COUNT=0;
+  Counter() {
+    COUNT++;
+  }
+}
+
+The COUNT variable will be shared by all objects of that class.
+Now, we can create objects of our Counter class in main, and access the static variable.
+public class MyClass {
+  public static void main(String[ ] args) {
+    Counter c1 = new Counter();
+    Counter c2 = new Counter();
+    System.out.println(Counter.COUNT);
+  }
+}
+//Outputs "2"
+Try It Yourself
+
+The output is 2, because the COUNT variable is static and gets incremented by one each time a new object of the Counter class is created. In the code above, we created 2 objects.
+You can also access the static variable using any object of that class, such as c1.COUNT.
+It’s a common practice to use upper case when naming a static variable, although not mandatory.
+
+===================================================================================================
+
+final
+
+Use the final keyword to mark a variable constant, so that it can be assigned only once.
+Example:
+class MyClass {
+  public static final double PI = 3.14; 
+  public static void main(String[ ] args) {
+    System.out.println(PI);
+  }
+}
+Try It Yourself
+
+PI is now a constant. Any attempt to assign it a value will cause an error.
+Methods and classes can also be marked final. 
+This serves to restrict methods so that they can't be overridden and classes 
+so that they can't be subclassed.
+These concepts will be covered in the next module.
+
+*************************************************************************************************
+Encapsulation:
+
+There are 4 core concepts in OOP: encapsulation, inheritance, polymorphism, and abstraction.
+
+The idea behind encapsulation is to ensure that implementation details are not visible to users. The variables of one class will be hidden from the other classes, accessible only through the methods of the current class. This is called data hiding.
+To achieve encapsulation in Java, declare the class' variables as private and provide public setter and getter methods to modify and view the variables' values.
+
+For example:
+class BankAccount {
+  private double balance=0;
+  public void deposit(double x) {
+    if(x > 0) {
+      balance += x;
+    }
+  }
+}
+
+This implementation hides the balance variable, enabling access to it only through the deposit method, which validates the amount to be deposited before modifying the variable.
+In summary, encapsulation provides the following benefits:
+- Control of the way data is accessed or modified
+- More flexible and easily changed code
+- Ability to change one part of the code without affecting other parts
+*****************************************************************************************************
+
+Inheritance
+
+Inheritance is the process that enables one class to acquire the properties (methods and variables) of another. With inheritance, the information is placed in a more manageable, hierarchical order.
+
+The class inheriting the properties of another is the subclass (also called derived class, or child class); the class whose properties are inherited is the superclass (base class, or parent class).
+
+To inherit from a class, use the extends keyword.
+This example shows how to have the class Dog to inherit from the class Animal.
+class Dog extends Animal {
+ // some code
+}
+
+Here, Dog is the subclass, and Animal is the superclass.
+
+*****************************************************************************************************
+
+Fill in the blanks to inherit from the Animal class and call its method in main.
+
+class Animal {
+   public void makeSound() {
+   System.out.println(''Hi'');
+   }
+}
+ 
+class Dog extendsAnimal {
+}
+class A {
+   public static void main(String args[ ]) {
+   Dog dog = new Dog();
+   
+ dog.makeSound();
+   }
+}
+*****************************************************************************************************
+
+Method Overloading
+
+When methods have the same name, but different parameters, it is known as method overloading.
+This can be very useful when you need the same method functionality for different types of parameters.
+The following example illustrates a method that returns the maximum of its two parameters.
+int max(int a, int b) {
+  if(a > b) {
+    return a;
+  }
+  else {
+    return b;
+  }
+}
+
+The method shown above will only work for parameters of type integer.
+However, we might want to use it for doubles, as well. For that, you need to overload the max method:
+double max(double a, double b) {
+  if(a > b) {
+    return a;
+  }
+  else {
+    return b;
+  }
+}
+Try It Yourself
+
+Now, our max method will also work with doubles.
+An overloaded method must have a different argument list; the parameters should differ in their type, number, or both.
+Another name for method overloading is compile-time polymorphism.
+
+*********************************************************************************************
+
+Abstraction
+
+Data abstraction provides the outside world with only essential information, in a process 
+of representing essential features without including implementation details.
+A good real-world example is a book. When you hear the term book, 
+you don't know the exact specifics, such as the page count, the color, 
+or the size, but you understand the idea, or abstraction, of a book.
+The concept of abstraction is that we focus on essential qualities, rather than the specific 
+characteristics of one particular example.
+
+In Java, abstraction is achieved using abstract classes and interfaces.
+An abstract class is defined using the abstract keyword.
+- If a class is declared abstract it cannot be instantiated (you cannot create objects of that type).
+- To use an abstract class, you have to inherit it from another class.
+- Any class that contains an abstract method should be defined as abstract.
+An abstract method is a method that is declared without an implementation (without braces, 
+ and followed by a semicolon): abstract void walk();
+ 
+ *****************************************************************************************
+ Interfaces
+
+An interface is a completely abstract class that contains only abstract methods.
+Some specifications for interfaces:
+- Defined using the interface keyword.
+- May contain only static final variables.
+- Cannot contain a constructor because interfaces cannot be instantiated.
+- Interfaces can extend other interfaces.
+- A class can implement any number of interfaces.
+
+An example of a simple interface:
+interface Animal {
+  public void eat();
+  public void makeSound();
+}
+
+Interfaces have the following properties:
+- An interface is implicitly abstract. You do not need to use the abstract keyword while declaring an interface.
+- Each method in an interface is also implicitly abstract, so the abstract keyword is not needed.
+- Methods in an interface are implicitly public.
+A class can inherit from just one superclass, but can implement multiple interfaces!
+******************************************************************************************************
+
+Enums
+
+An Enum is a special type used to define collections of constants.
+Here is a simple Enum example:
+enum Rank {
+  SOLDIER,
+  SERGEANT,
+  CAPTAIN
+}
+
+Note that the values are comma-separated.
+You can refer to the constants in the enum above with the dot syntax.
+Rank a = Rank.SOLDIER;
+
+Basically, Enums define variables that represent members of a fixed set.
+
+Note:
+Enums
+
+You should always use Enums when a variable (especially a method parameter) can only take one out of a small set of possible values.
+If you use Enums instead of integers (or String codes), you increase compile-time checking and avoid errors from passing in invalid constants, and you document which values are legal to use.
+Some sample Enum uses include month names, days of the week, deck of cards, etc.
+
+************************************************************************************************
+Java API
+
+The Java API is a collection of classes and interfaces that have been written for you to use.
+The Java API Documentation with all of the available APIs can be located on the Oracle website at
+http://docs.oracle.com/javase/7/docs/api/
+Once you locate the package you want to use, you need to import it into your code.
+The package can be imported using the import keyword.
+For example:
+import java.awt.*;
+
+The awt package contains all of the classes for creating user interfaces and for painting graphics 
+and images.
+The wildcard character (*) is used to import all of the classes in the package.
+
+******************************************************
+Exceptions, Lists, Threads and Files
+
+An exception is a problem that occurs during program execution. Exceptions cause abnormal termination
+ of the program.
+Exception handling is a powerful mechanism that handles runtime errors to maintain normal application flow.
+
+An exception can occur for many different reasons. Some examples:
+- A user has entered invalid data.
+- A file that needs to be opened cannot be found.
+- A network connection has been lost in the middle of communications.
+- Insufficient memory and other issues related to physical resources.
+As you can see, exceptions are caused by user error, programmer error, or physical resource issues. 
+However, a well-written program should handle all possible exceptions.
+
+****
+
+Exceptions can be caught using a combination of the try and catch keywords.
+A try/catch block is placed around the code that might generate an exception.
+Syntax:
+try {
+  //some code
+} catch (Exception e) {
+  //some code to handle errors
+}
+
+A catch statement involves declaring the type of exception you are trying to catch. 
+If an exception occurs in the try block, the catch block that follows the try is checked. 
+If the type of exception that occurred is listed in a catch block, the exception is passed 
+to the catch block much as an argument is passed into a method parameter.
+The Exception type can be used to catch all possible exceptions.
+
+The example below demonstrates exception handling when trying to access an array index that does not exist:
+
+public class MyClass {
+  public static void main(String[ ] args) {
+    try {
+      int a[ ] = new int[2];
+      System.out.println(a[5]);
+    } catch (Exception e) {
+      System.out.println("An error occurred");
+    }
+  }
+}
+//Outputs "An error occurred"
+Try It Yourself
+
+Without the try/catch block this code should crash the program, as a[5] does not exist.
+Notice the (Exception e) statement in the catch block - it is used to catch all possible Exceptions.
+
+**********
+throw
+
+The throw keyword allows you to manually generate exceptions from your methods. Some of the numerous available exception types include the IndexOutOfBoundsException, IllegalArgumentException, ArithmeticException, and so on.
+For example, we can throw an ArithmeticException in our method when the parameter is 0.
+int div(int a, int b) throws ArithmeticException {
+  if(b == 0) {
+    throw new ArithmeticException("Division by Zero");
+  } else {
+    return a / b;
+  }
+}
+Try It Yourself
+
+The throws statement in the method definition defines the type of Exception(s) the method can throw.
+Next, the throw keyword throws the corresponding exception, along with a custom message.
+If we call the div method with the second parameter equal to 0, it will throw an ArithmeticException with the message "Division by Zero".
+Multiple exceptions can be defined in the throws statement using a comma-separated list.
+
+*********
+Threads
+Java is a multi-threaded programming language. 
+This means that our program can make optimal use of available resources by running 
+two or more components concurrently, 
+with each component handling a different task.
+You can subdivide specific operations within a single application into individual threads 
+that all run in parallel.
+The following diagram shows the life-cycle of a thread.
+
+**********
+There are two ways to create a thread.
+1. Extend the Thread class
+Inherit from the Thread class, override its run() method, and write the functionality of the thread in the run() method.
+Then you create a new object of your class and call it's start method to run the thread.
+Example:
+class Loader extends Thread {
+  public void run() {
+    System.out.println("Hello");
+  }
+}
+
+class MyClass {
+  public static void main(String[ ] args) {
+    Loader obj = new Loader();
+    obj.start();
+  }
+}
+Try It Yourself
+
+As you can see, our Loader class extends the Thread class and overrides its run() method.
+When we create the obj object and call its start() method, the run() method statements 
+execute on a different thread.
+Every Java thread is prioritized to help the operating system determine the order 
+in which to schedule threads. The priorities range from 1 to 10, with each thread
+ defaulting to priority 5. You can set the thread priority with the setPriority() method.
+
+*************************************
+
+ArrayList
+
+The Java API provides special classes to store and manipulate groups of objects.
+One such class is the ArrayList. 
+Standard Java arrays are of a fixed length, which means that after they are created, 
+they cannot expand or shrink.
+On the other hand, ArrayLists are created with an initial size, but when this size is exceeded, 
+the collection is automatically enlarged.
+When objects are removed, the ArrayList may shrink in size. 
+Note that the ArrayList class is in the java.util package, 
+so it's necessary to import it before using it.
+Create an ArrayList as you would any object.
+import java.util.ArrayList;
+//...
+ArrayList colors = new ArrayList();
+
+You can optionally specify a capacity and type of objects the ArrayList will hold:
+ArrayList<String> colors = new ArrayList<String>(10);
+
+The code above defines an ArrayList of Strings with 10 as its initial size.
+ArrayLists store objects. Thus, the type specified must be a class type. 
+You cannot pass, for example, int as the objects' type. 
+Instead, use the special class types that correspond to the desired value type, such as Integer for int, 
+Double for double, and so on.
