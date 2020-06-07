@@ -34,12 +34,12 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/EclipseNow/SeleniumDrivers/libs/byte-buddy-1.8.15.jar"/>
-	<classpathentry kind="lib" path="D:/EclipseNow/SeleniumDrivers/libs/commons-exec-1.3.jar"/>
-	<classpathentry kind="lib" path="D:/EclipseNow/SeleniumDrivers/libs/guava-25.0-jre.jar"/>
-	<classpathentry kind="lib" path="D:/EclipseNow/SeleniumDrivers/libs/okhttp-3.11.0.jar"/>
-	<classpathentry kind="lib" path="D:/EclipseNow/SeleniumDrivers/libs/okio-1.14.0.jar"/>
-	<classpathentry kind="lib" path="D:/EclipseNow/SeleniumDrivers/client-combined-3.141.59.jar"/>
-	<classpathentry kind="lib" path="D:/EclipseNow/SeleniumDrivers/client-combined-3.141.59-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Selenium/Selenium Client &amp; Webdriver/libs/byte-buddy-1.8.15.jar"/>
+	<classpathentry kind="lib" path="E:/Selenium/Selenium Client &amp; Webdriver/libs/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="E:/Selenium/Selenium Client &amp; Webdriver/libs/guava-25.0-jre.jar"/>
+	<classpathentry kind="lib" path="E:/Selenium/Selenium Client &amp; Webdriver/libs/okhttp-3.11.0.jar"/>
+	<classpathentry kind="lib" path="E:/Selenium/Selenium Client &amp; Webdriver/libs/okio-1.14.0.jar"/>
+	<classpathentry kind="lib" path="E:/Selenium/Selenium Client &amp; Webdriver/client-combined-3.141.59.jar"/>
+	<classpathentry kind="lib" path="E:/Selenium/Selenium Client &amp; Webdriver/client-combined-3.141.59-sources.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
